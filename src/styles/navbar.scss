@@ -1,0 +1,30 @@
+.navbar {
+  .navbar-item img {
+    max-height: 3rem;
+  }
+  .navbar-burger span {
+    height: 2px;
+  }
+  @include until($navbar-breakpoint) {
+    .navbar-menu {
+      display: block;
+      padding: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      height: auto;
+      max-height: 0;
+      overflow: hidden;
+      transition: all .4s ease-in-out;
+      pointer-events: none;
+      
+      &.is-active {
+        padding: .5rem 0;
+        opacity: 1;
+        height: auto;
+        max-height: 268px; //(n links) * 40 + 68
+        pointer-events: auto;
+      }
+    }
+  }
+}
